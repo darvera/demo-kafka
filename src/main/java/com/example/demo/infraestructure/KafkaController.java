@@ -1,12 +1,10 @@
 package com.example.demo.infraestructure;
 
 
+import com.example.demo.model.ClientWallet;
 import com.example.demo.producer.KafkaStringProducer;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(value = "/kafka")
@@ -19,8 +17,25 @@ public class KafkaController {
         this.kafkaStringProducer = kafkaStringProducer;
     }
 
-    @PostMapping(value = "/publish")
-    public void sendMessageToKafkaTopic(@RequestParam("message") String message) {
+    @PostMapping(value = "/send")
+    public void sendMessageToKafkaTopic(@RequestBody ClientWallet message) {
         this.kafkaStringProducer.sendMessage(message);
     }
+
+    /*
+    @Autowired
+    KafkaTemplate<String, Book> kafkaTemplate;
+
+    private static final String TOPIC = "testTopic";
+
+    // Annotation
+    @PostMapping("/publish")
+    public String publishMessage(@RequestBody Book book)
+    {
+        // Sending the message
+        kafkaTemplate.send(TOPIC, book);
+
+        return "Published Successfully";
+    }
+     */
 }
