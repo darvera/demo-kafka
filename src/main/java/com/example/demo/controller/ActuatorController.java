@@ -6,8 +6,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.mvc.method.RequestMappingInfo;
-import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
+import org.springframework.web.reactive.result.method.RequestMappingInfo;
+import org.springframework.web.reactive.result.method.annotation.RequestMappingHandlerMapping;
 
 import java.util.List;
 import java.util.stream.Collectors;

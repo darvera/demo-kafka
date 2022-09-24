@@ -14,5 +14,4 @@ public class KafkaStringConsumer {
     public void consume(String message) {
         logger.info("Consuming Message {}", message);
     }
-
 }

@@ -3,27 +3,23 @@ package com.example.demo.model;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import org.springframework.data.annotation.Id;
 
 @Getter
 @Setter
-public class ClientWallet {
 
-    // Class data members
+public class ClientWallet {
     @Id
     private String id;
-    private String ident;
+    private String idenDoc;
     private String phone;
     private String imei;
     private String email;
     private SystemOperation systemOperation;
-    private TypePay type;
+    private int status;
 
-    private Double amount;
     // Constructor 1
-    public ClientWallet(){
-        super();
-    }
     // Constructor 2
 
     /*
@@ -42,12 +38,13 @@ public class ClientWallet {
     @Override
     public String toString() {
         return "ClientWallet{" +
-                "ident='" + ident + '\'' +
+                "id='" + id + '\'' +
+                ", idenDoc='" + idenDoc + '\'' +
                 ", phone='" + phone + '\'' +
                 ", imei='" + imei + '\'' +
                 ", email='" + email + '\'' +
                 ", systemOperation=" + systemOperation +
-                ", type=" + type +
+                ", status=" + status +
                 '}';
     }
 }
